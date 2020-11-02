@@ -21,14 +21,14 @@ function handlePaste(e) {
 
 	// if all inputs are filled at once, submit form
 	// purposefully will not auto submit if the paste length is greater than the number of input fields
-	const len = inputs.length;
-	if(paste.length == len) {
+	
+	if(paste.length == inputs.length) {
 		const submitButton = document.querySelector('form [type="submit"]');
 		submitButton.focus();
 		setTimeout(() => submitButton.click(), 200);
 	}
-	// if all inputs are not filled, focus the first empty input
-	else if(paste.length < len) {
+	// if all inputs are not filled, focus the next input field
+	else if(paste.length < inputs.length) {
 		inputs[paste.length].focus();
 	}
 }
